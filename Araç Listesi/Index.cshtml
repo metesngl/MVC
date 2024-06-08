@@ -1,0 +1,55 @@
+﻿@model Order
+
+<h2>Araç Satın Alma Listesi</h2>
+
+<form asp-action="Index" method="post" class="needs-validation" novalidate>
+
+
+    <div class="mb-3">
+
+        <label asp-for="MarkaId" class="form-label"></label>
+        <select class="form-select" id="markaId" name="MarkaID" asp-for="MarkaId" asp-items="@(new SelectList(Model.Markas,"Id","Name"))">
+            <option value="">Marka Seçin</option>
+
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="ModelId" class="form-label"></label>
+        <select class="form-select" id="modelId" name="ModelId" asp-for="ModelId" asp-items="@(new SelectList(Model.Models,"Id","Name"))">
+            <option value="">Model Seçin</option>
+
+        </select>
+
+    </div>
+
+    <div class="mb-3">
+
+        <label asp-for="KasaId" class="form-label"></label>
+        <select class="form-select" id="kasaId" name="KasaId" asp-for="KasaId" asp-items="@(new SelectList(Model.Kasas,"Id","Name"))">
+            <option value="">Kasa Tipi Seçin</option>
+
+        </select>
+
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="RenkId" class="form-label"></label>
+        <select class="form-select" id="renkId" name="RenkId" asp-for="RenkId" asp-items="@(new SelectList(Model.Renks,"Id","Name"))">
+            <option value="">Renk Seçin</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="OrderNo" class="form-label"></label>
+        <input asp-for="OrderNo" type="text" class="form-control" />
+    </div>
+
+</form>
+
+<button type="submit" class="btn btn-success">Sipariş Ver</button>
